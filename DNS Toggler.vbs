@@ -16,6 +16,8 @@ End If
 ' Tukar kepada automatik sekiranya DNS adalah localhost
 ' Tukar kepada localhost sekiranya DNS adalah automatik
 localHost = "127.0.0.1"
+
+'To-do; masukkan arahan Command CreateObject
 ipAdd = Get-DnsClientServerAddress -InterfaceAlias wifi -AddressFamily IPv4
 
 Select case ipAdd
