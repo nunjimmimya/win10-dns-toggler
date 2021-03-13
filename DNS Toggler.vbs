@@ -18,15 +18,15 @@ End If
 localHost = "127.0.0.1"
 
 'To-do; masukkan arahan Command CreateObject
-ipAdd = Get-DnsClientServerAddress -InterfaceAlias wifi -AddressFamily IPv4
+ipAdd = CreateObject("Shell.Application").ShellExecute "Get-DnsClientServerAddress -InterfaceAlias Wi-Fi -AddressFamily IPv4"
 
 Select case ipAdd
 	case localhost
 		'Set DNS IP kepada automatik
-		Set-DnsClientServerAddress -InterfaceAlias wifi -ResetServerAddresses
+		Set-DnsClientServerAddress -InterfaceAlias Wi-Fi -ServerAddresses ("218.18.188.18","1.9.1.9")
 	case !localhost
 		'Set DNS IP kepada localhost
-		Set-DnsClientServerAddress -InterfaceAlias wifi -ServerAddress localhost
+		Set-DnsClientServerAddress -InterfaceAlias Wi-Fi -ServerAddress localhost
 	case Else
 		'Salah!!!
 End Select
